@@ -1,8 +1,9 @@
 # Hexagonal Architecture Project Microservices
 Dependencies :
-              - Spring Boot Starter Web
-              - Spring Boot Starter Jpa
-              - MySQL Connector
+        - Spring Boot Starter Web
+        - Spring Boot Starter Jpa
+        - MySQL Connector
+              
 Maven Project 2.7.9
 Java Versión 8
 
