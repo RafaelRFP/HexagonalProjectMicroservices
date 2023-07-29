@@ -1,0 +1,32 @@
+version: "3.7"
+services:
+  hexaprojdb:
+    image: mysql:8.0
+    container_name: hexaprojdb
+    environment:
+      MYSQL_ROOT_PASSWORD: rootroot
+      MYSQL_DATABASE: 'tasks'
+    ports: 
+      - '3386:3306'
+    volumes:
+      - hexaprojdb:/var/lib/mysql
+    networks:
+      - hexaprojdb-network
+  dbeaverCloudHexaProjdb:
+    image: dbeaver/cloudbeaver:latest
+    container_name: cloudbeaverdb
+    restart: unless-stopped
+    ports: 
+      - '8100:8978'
+    networks:
+      - hexaprojdb-network
+         
+# Names our volume
+volumes:
+  hexaprojdb:
+
+networks:
+  hexaprojdb-network:
+      name: "hexaprojdb-network"
+      driver: bridge 
+
